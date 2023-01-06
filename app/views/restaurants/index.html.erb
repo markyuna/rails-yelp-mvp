@@ -1,14 +1,18 @@
-<div class="card-header">
-     <h1 class = 'text-center'>Find Your Restaurant</h1>
-  </div>
-<div class="container my-auto mt-5">
-  <div class="card-body">
+<div class="card m-5 p-5">
+<p style="color: green"><%= notice %></p>
+
+<h1>Restaurants</h1>
+
+<div id="restaurants">
   <% @restaurants.each do |restaurant| %>
-  <h2><%= restaurant.name %></h2>
-  <p><%= restaurant.address %></p>
-  <p><%= restaurant.phone_number %></p>
-  <p><%= restaurant.category %></p>
+    <%= render restaurant %>
+    <p>
+      <%= link_to "Show this restaurant", restaurant %>
+    </p>
   <% end %>
-  </div>
+</div>
+<div class="btn btn-danger">
+<%= link_to "New restaurant", new_restaurant_path, class: "link_to" %>
+</div>
 
 </div>

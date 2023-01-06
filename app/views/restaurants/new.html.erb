@@ -1,4 +1,12 @@
-<h1>New Restaurant</h1>
+<div class="card m-5 p-5">
+<h1>New restaurant</h1>
 
-<%= render 'form', restaurant: @restaurant %>
-<%= link_to 'Back', restaurants_path %>
+<%= render "form", restaurant: @restaurant %>
+
+<br>
+
+<div class="btn btn-danger">
+  <%= link_to "Back to restaurants", restaurants_path, class: "link_to" %>
+</div>
+
+</div>

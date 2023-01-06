@@ -1,0 +1,18 @@
+<div class="card m-5 p-5">
+<p style="color: green"><%= notice %></p>
+
+<h1>Reviews</h1>
+
+<div id="review">
+  <% @reviews.each do |review| %>
+    <%= render review %>
+    <p>
+      <%= link_to "Show this review", review %>
+    </p>
+  <% end %>
+</div>
+<div class="btn btn-danger">
+<%= link_to "New review", reviews_new_path, class: "link_to" %>
+</div>
+
+</div>

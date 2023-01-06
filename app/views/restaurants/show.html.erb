@@ -1,4 +1,31 @@
-<h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.phone_number %></p>
-<p><%= @restaurant.category %></p>
+<div class="card m-5 p-5">
+<p style="color: green"><%= notice %></p>
+
+<%= render @restaurant %>
+
+<div>
+  <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
+  <%= link_to "Back to restaurants", restaurants_path %>
+  <%= link_to 'Creer review', reviews_new_path(@restaurant) %>
+
+  <%= link_to review_path"Destroy this restaurant", @restaurant, class: "btn btn-primary link_to", method: :delete %>
+</div>
+
+<div class="content mt-5">
+<!-- app/views/restaurants/show.html.erb -->
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+    <%= review.content %>
+    <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+   </li>
+
+
+  <% end %>
+</ul>
+<br>
+</div>
+
+</div>
